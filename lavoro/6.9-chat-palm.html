@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="lib/base.css"><script src="lib/anim.js"></script>
+<style>
+  /* Chat Palm (mock 05-06-07) nella zona libera a sinistra; la mamma è a destra */
+  #col { left: 72px; top: 64px; width: 1000px; }
+  #q { background: var(--palm); color: #fff; border-radius: 30px; padding: 22px 34px 24px; font-size: 32px; font-weight: 500;
+       line-height: 1.35; width: fit-content; max-width: 1000px; box-shadow: 0 14px 34px rgba(30,40,30,.25); border: 3px solid rgba(255,255,255,.75);
+       transform-origin: 0 0; min-height: 90px; }
+  #caret { display: inline-block; width: 3px; height: 34px; background: #fff; vertical-align: -6px; margin-left: 3px; }
+  #ans { margin-top: 22px; background: rgba(250,248,243,.97); border-radius: 30px; padding: 34px 44px 30px; width: 1000px;
+         box-shadow: 0 16px 40px rgba(30,40,30,.22); transform-origin: 0 0; }
+  #ans h2 { font-family: "Fraunces", serif; font-weight: 700; font-size: 42px; color: #1F2B25; margin-bottom: 18px; }
+  #ans ul { list-style: none; }
+  #ans li { font-size: 31px; color: #26302B; line-height: 1.32; padding: 6px 0 6px 34px; position: relative; }
+  #ans li::before { content: ""; position: absolute; left: 4px; top: 21px; width: 10px; height: 10px; border-radius: 50%; background: #9AA59F; }
+  #ans li b { font-weight: 600; }
+  #ans li span { font-weight: 400; color: #4a544f; }
+  /* Card fonte KB1 (mock 07) — ricostruzione provvisoria in attesa dell'originale */
+  #card { margin-top: 20px; width: 1000px; height: 112px; border-radius: 26px; background: linear-gradient(#F3F8FD, #E3EEF9);
+          border: 3px solid #fff; box-shadow: 0 12px 30px rgba(30,50,80,.22); display: flex; align-items: center; padding: 0 30px 0 22px; gap: 18px; transform-origin: 30% 50%; }
+  #card .kb { background: #D6E6F7; color: #3570B0; font-weight: 700; font-size: 26px; border-radius: 12px; padding: 6px 14px; }
+  #card .lg { color: #3570B0; font-weight: 600; font-size: 20px; letter-spacing: .12em; display: block; margin-bottom: 3px; }
+  #card .txt { flex: 1; }
+  #card .tt { color: #3E4B57; font-weight: 500; font-size: 24px; white-space: nowrap; }
+  #card svg { flex: none; }
+  #tap { position: absolute; width: 1000px; height: 112px; border-radius: 26px; background: rgba(53,112,176,.18); opacity: 0; }
+</style></head><body>
+<div id="col" class="abs">
+  <div id="q"><span id="qt"></span><span id="caret"></span></div>
+  <div id="ans">
+    <h2>Cosa portare all'appuntamento</h2>
+    <ul>
+      <li id="b1"><b>Tessera sanitaria del bambino</b></li>
+      <li id="b2"><b>Libretto o documentazione vaccinale cartacea</b></li>
+      <li id="b3"><b>Eventuale documentazione medica</b></li>
+      <li id="b4"><b>Un oggetto familiare o gioco</b></li>
+      <li id="b5"><b>Un cambio e vestiti comodi</b></li>
+    </ul>
+  </div>
+  <div style="position:relative">
+    <div id="card"><span class="kb">KB1</span><span class="txt"><span class="lg">LINEE GUIDA</span><span class="tt">Vaccinazioni nei primi anni: protezione, appuntamenti e reazioni comuni</span></span>
+      <svg width="34" height="30" viewBox="0 0 34 30"><path d="M17 6C13 2.5 7 2 2 3v22c5-1 11-.5 15 3 4-3.5 10-4 15-3V3c-5-1-11-.5-15 3zm0 0v22" fill="none" stroke="#6E8193" stroke-width="2.4" stroke-linejoin="round"/></svg>
+    </div>
+    <div id="tap" style="top:0;left:0"></div>
+  </div>
+</div>
+<script>
+const Q = "Ciao Palm! Mi ricordi come prepararmi per il vaccino, devo portare qualcosa?";
+// Tempi (LEGGIMI 6.9): scrive 0–3", invio ~3", risposta 4–11" (tempo di lettura), card sotto la risposta, tocco ~11"
+const T = { typeA: .25, typeB: 2.75, send: 3.0, ans: 4.0, bullets: [4.6, 5.0, 5.4, 5.8, 6.2], card: 7.0, tap: 11.0 };
+window.seek = t => {
+  // bolla domanda: compare e si compone lettera per lettera
+  A.enter(q, t, 0, { dur: .3, dy: 10, scale: .98 });
+  const n = Math.round(Q.length * A.p(t, T.typeA, T.typeB - T.typeA));
+  qt.textContent = Q.slice(0, n);
+  caret.style.opacity = t < T.send ? ((Math.floor(t * 2.2) % 2) ? .25 : 1) : 0;
+  // invio: piccolo "salto" della bolla
+  const s = A.p(t, T.send, .35), bump = Math.sin(s * Math.PI) * .03;
+  if (t >= T.send) q.style.transform = `scale(${(1 - bump).toFixed(4)})`;
+  A.enter(ans, t, T.ans, { dur: .5, dy: 20, scale: .98 });
+  T.bullets.forEach((b, i) => A.enter(document.getElementById('b' + (i + 1)), t, b, { dur: .4, dy: 10 }));
+  A.enter(card, t, T.card, { dur: .5, dy: 16, scale: .97 });
+  // tocco: la card si preme e si illumina
+  const k = A.p(t, T.tap, .45), press = Math.sin(k * Math.PI);
+  if (t >= T.tap) card.style.transform = `scale(${(1 - .025 * press).toFixed(4)})`;
+  tap.style.opacity = (press * .9).toFixed(3);
+};
+</script></body></html>

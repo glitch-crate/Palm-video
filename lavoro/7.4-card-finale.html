@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="lib/base.css"><script src="lib/anim.js"></script>
+<style>
+  /* Card finale (mock 09): sfondo crema con aloni verdi; ?alpha=1 -> solo logo e testi su trasparente */
+  #bg { left: 0; top: 0; width: 1920px; height: 1080px; background: #F8F6F1; overflow: hidden; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); }
+  #logo { left: 50%; top: 250px; width: 520px; margin-left: -260px; }
+  #logo img { width: 100%; display: block; }
+  .l { left: 0; width: 1920px; text-align: center; font-family: "Fraunces", serif; color: #1F4D3A; }
+  #l1 { top: 580px; font-size: 70px; font-weight: 400; }
+  #l2 { top: 680px; font-size: 84px; font-weight: 700; }
+</style></head><body>
+<div id="bg" class="abs">
+  <div class="blob" style="left:-120px;top:-60px;width:820px;height:520px;background:rgba(170,205,180,.38)"></div>
+  <div class="blob" style="left:1250px;top:640px;width:900px;height:560px;background:rgba(170,205,180,.32)"></div>
+</div>
+<div id="logo" class="abs"><img src="brand/palm-header-mark.png"></div>
+<div id="l1" class="abs l">Meno cose da tenere a mente.</div>
+<div id="l2" class="abs l">Più tempo per crescere insieme.</div>
+<script>
+if (location.search.includes('alpha')) bg.style.display = 'none';
+// Tempi (brief 7.4): logo, prima frase, pausa ben più lunga di 1" (2,4"), seconda frase, poi tempo per leggerle entrambe.
+const T = { logo: .3, l1: 1.2, l2: 3.6 };
+window.seek = t => {
+  A.enter(logo, t, T.logo, { dur: .8, dy: 10, scale: .97 });
+  A.enter(l1, t, T.l1, { dur: .7, dy: 14 });
+  A.enter(l2, t, T.l2, { dur: .7, dy: 14 });
+};
+</script></body></html>

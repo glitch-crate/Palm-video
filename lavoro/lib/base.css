@@ -1,0 +1,33 @@
+/* Font ufficiali dal sito palmhealth.me: Plus Jakarta Sans (sans) + Fraunces (serif) */
+@font-face { font-family: "PJS"; src: url("../fonts/PlusJakartaSans-400.ttf"); font-weight: 400; }
+@font-face { font-family: "PJS"; src: url("../fonts/PlusJakartaSans-500.ttf"); font-weight: 500; }
+@font-face { font-family: "PJS"; src: url("../fonts/PlusJakartaSans-600.ttf"); font-weight: 600; }
+@font-face { font-family: "PJS"; src: url("../fonts/PlusJakartaSans-700.ttf"); font-weight: 700; }
+@font-face { font-family: "Fraunces"; src: url("../fonts/Fraunces-400.ttf"); font-weight: 400; }
+@font-face { font-family: "Fraunces"; src: url("../fonts/Fraunces-500.ttf"); font-weight: 500; }
+@font-face { font-family: "Fraunces"; src: url("../fonts/Fraunces-600.ttf"); font-weight: 600; }
+@font-face { font-family: "Fraunces"; src: url("../fonts/Fraunces-700.ttf"); font-weight: 700; }
+
+:root {
+  --palm: #2E473B;          /* verde banner da brief */
+  --palm-ink: #1F3A2E;
+  --cream: #F7F5F0;
+  --sage: #CFDCD2;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-style: normal !important; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+body { font-family: "PJS", sans-serif; -webkit-font-smoothing: antialiased; position: relative; }
+.abs { position: absolute; }
+
+/* Banner Palm (mock 04): rettangolo verde, angoli poco arrotondati, icona mano piccola a sinistra */
+.banner {
+  position: absolute; display: flex; align-items: center; gap: 28px;
+  background: var(--palm); border-radius: 14px;
+  padding: 30px 44px 32px 30px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.28);
+}
+.banner .ico { width: 84px; height: 84px; border-radius: 12px; background: rgba(255,255,255,.08);
+  display: flex; align-items: center; justify-content: center; flex: none; }
+.banner .ico img { width: 52px; }
+.banner .kw { font-weight: 600; font-size: 22px; letter-spacing: .32em; color: var(--sage); text-transform: uppercase; margin-bottom: 8px; }
+.banner .tx { font-weight: 400; font-size: 44px; line-height: 1.16; color: #fff; }

@@ -1,0 +1,68 @@
+PALM – GRAFICHE (Zac) – consegna del 6 novembre 2026
+=====================================================
+
+Formato: 1920x1080, 24 fps. "-alpha.mov" = ProRes 4444 con canale alfa (solo grafica su trasparente).
+"-anteprima.mp4" = grafica sopra la clip di Andrea. ".png" = un fotogramma chiave.
+Font: quelli del sito palmhealth.me -> Plus Jakarta Sans (testi sans) e Fraunces (titoli serif), in lavoro/fonts.
+Logo e mano: file ufficiali del sito (lavoro/brand). Verde banner #2E473B. Niente corsivo in nessuna grafica.
+Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquadratura o taglio, si riallineano in pochi minuti
+(i sorgenti sono in lavoro/, i tempi sono in cima a ogni file .html).
+
+
+2.2-forum-notifiche/          clip 08_PALM_2.2 – 12,0" (289 fotogrammi)
+  1,0"  titolo «FORUM MAMME · Coliche» + riga dorata che si disegna
+  2,6"  commento 1 Mamma_Lucia83          (quando il viso del papà è già fuori dall'area del forum)
+  4,0"  commento 2 ElenaeLeo (icona Facebook)
+  5,3"  commento 3 sara_mamma2
+  5,8"  WhatsApp «Mamme del quartiere»   (dopo l'uscita del papà; le notifiche interrompono la lettura)
+  6,5"  commento 4 MammaChiaretta (icona TikTok)
+  7,0"  WhatsApp «Mamme di marzo»
+  7,6"  commento 5 giuliaG_
+  8,2"  WhatsApp «Gruppo asilo nido»
+  tutto resta fino alla fine (ultimo commento visibile 4,4"). Volti di mamma e papà mai coperti.
+  NOTA LEGGIBILITÀ: 8 testi in 12" sono voluti come "accumulo", ma se si vuole leggere ogni commento con calma
+  conviene allungare l'inquadratura di 2–3" (brief: meglio allungare che accelerare).
+
+3.2-documento-vaccino/        file piatto per Andrea (da posare sul foglio della clip 09)
+  A4 a 300 dpi (2480x3510). Riga in evidenza: «5 novembre 2026 – Vaccino esavalente – Ambulatorio 2».
+  Carattere da ufficio tipo Arial (è un documento ASL, non una grafica Palm).
+
+3.3-calendario/               clip 10_PALM_3.3 – 4,0" (97 fotogrammi)
+  «NOVEMBRE 2026» stampato sul foglio vuoto del frigo, agganciato al movimento di macchina (tracking).
+  Settimana da lunedì; l'1 è domenica; 30 nella casella del 23 (la griglia stampata ha 5 righe).
+  0,8"–1,8"  il 6 (venerdì) si cerchia a penna rossa; poi resta.
+  File piatti: calendario trasparente con e senza cerchio, e versione su carta.
+
+6.2-banner/  6.7-banner/  6.12-banner/   banner nel nuovo stile – 5,0" (120 fotogrammi), clip non ancora ricevute
+  6.2   ARCHIVIO       «Ogni informazione in un unico posto.»
+  6.7   SUPPORTO       «Un supporto, a qualsiasi ora»
+  6.12  CONDIVISIONE   «I suoi dati condivisi in tempo reale.»
+  entrano a 0,4" e restano fermi: Andrea taglia/posiziona. Stessa posizione e misura del banner REMINDERS.
+
+6.8-reminder-banner/          clip 12_PALM_6.8 – 7,0" (169 fotogrammi)
+  3,0"  notifica «PALM · Reminder: Vaccino esavalente per Sofia alle 14» (in alto, centrata)
+  5,3"  la notifica esce verso l'alto
+  5,6"  banner «REMINDERS / Ogni appuntamento, sotto controllo» (in basso a sinistra), mentre prende il telefono
+  NOTA: con la clip di 7" il banner resta solo 1,4". Per il tempo di lettura conviene allungare la clip di ~2":
+  "-alpha_coda+2s.mov" è la stessa grafica con 2" in più (banner fermo), pronta per l'inquadratura allungata.
+
+6.9-chat-palm_BOZZA/          clip 13_PALM_6.9 – 14,0" (337 fotogrammi) – BOZZA
+  0,0"–2,75"  la bolla verde della domanda si compone lettera per lettera
+  3,0"        invio
+  4,0"        risposta: titolo «Cosa portare all'appuntamento», poi le 5 voci (4,6"–6,2")
+  7,0"        card azzurra KB1 «LINEE GUIDA · Vaccinazioni nei primi anni: protezione, appuntamenti e reazioni comuni»
+  11,0"       tocco sulla card (si preme e si illumina) -> stacco sul documento a tutto schermo
+  BOZZA perché mancano: testo completo reale della risposta (ora solo le 5 voci del brief) e card KB1 originale
+  (ora ricostruita dal mock 07). Si sostituiscono appena arrivano, senza cambiare i tempi.
+
+7.4-card-finale/              7,0" (168 fotogrammi) – a tutto schermo
+  0,3" logo · 1,2" «Meno cose da tenere a mente.» (normale) · 3,6" «Più tempo per crescere insieme.» (grassetto)
+  pausa tra le frasi 2,4"; poi 3,4" per leggerle entrambe. Più spazio tra logo e testo. Font Fraunces.
+  "_solo-logo-testi-alpha.mov" = solo logo e frasi su trasparente, se si vuole un altro sfondo.
+
+
+ANCORA DA FARE (mancano materiali)
+  2.1 · 3.1 · 4.1 scritte delle domande di Sofia  -> clip con la voce + stile da confermare
+  6.9 documento a tutto schermo + banner FONTI SCIENTIFICHE -> registrazione reale dello scorrimento (cliente), mock 08A/08B
+  6.12 notifica sul monitor più grande -> clip e grafica attuale
+  6.9 testo completo della risposta + card KB1 originale -> cliente

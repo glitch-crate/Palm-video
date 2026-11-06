@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="lib/base.css"><script src="lib/anim.js"></script>
+<style>
+  /* Notifica Palm (mock 03) */
+  #notif { left: 50%; top: 34px; width: 980px; margin-left: -490px; height: 128px;
+    background: rgba(250,249,246,.97); border-radius: 30px; display: flex; align-items: center;
+    padding: 0 40px 0 26px; gap: 24px; box-shadow: 0 16px 40px rgba(40,30,20,.22); transform-origin: 50% 0; }
+  #notif .ic { width: 76px; height: 76px; border-radius: 50%; background: var(--palm); display: flex;
+    align-items: center; justify-content: center; flex: none; }
+  #notif .ic img { width: 44px; }
+  #notif .body { flex: 1; }
+  #notif .row { display: flex; justify-content: space-between; align-items: baseline; }
+  #notif .app { font-weight: 700; font-size: 22px; letter-spacing: .14em; color: #6d726f; }
+  #notif .time { font-size: 22px; color: #8a8e8b; }
+  #notif .msg { font-size: 32px; font-weight: 500; color: #1d2421; margin-top: 4px; }
+  /* Banner REMINDERS (mock 04) */
+  #banner { left: 88px; top: 668px; transform-origin: 0 100%; }
+</style></head><body>
+<div id="notif" class="abs">
+  <div class="ic"><img src="brand/mano-bianca.png"></div>
+  <div class="body">
+    <div class="row"><span class="app">PALM</span><span class="time">ora</span></div>
+    <div class="msg">Reminder: Vaccino esavalente per Sofia alle 14</div>
+  </div>
+</div>
+<div id="banner" class="banner">
+  <div class="ico"><img src="brand/mano-bianca.png"></div>
+  <div><div class="kw">Reminders</div><div class="tx">Ogni appuntamento,<br>sotto controllo</div></div>
+</div>
+<script>
+// Tempi (LEGGIMI): notifica verso 3"; banner dopo che ha preso il telefono (~5,6")
+const T_NOTIF = 3.0, T_NOTIF_OUT = 5.3, T_BANNER = 5.6;
+window.seek = t => {
+  A.enter(notif, t, T_NOTIF, { dur: .5, dy: -60, scale: .96, exit: T_NOTIF_OUT, exitDur: .4 });
+  A.enter(banner, t, T_BANNER, { dur: .5, dy: 22, scale: .97 });
+};
+</script></body></html>
