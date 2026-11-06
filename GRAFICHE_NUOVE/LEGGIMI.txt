@@ -35,10 +35,9 @@ Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquad
   0,8"–1,8"  il 6 si cerchia a penna rossa; poi resta.
   File piatti: calendario trasparente con e senza cerchio, e versione su carta.
 
-6.2-banner/  6.7-banner/  6.12-banner/   banner nel nuovo stile – 5,0" (120 fotogrammi), clip non ancora ricevute
+6.2-banner/  6.7-banner/    banner nel nuovo stile – 5,0" (120 fotogrammi), clip non ancora ricevute
   6.2   ARCHIVIO       «Ogni informazione in un unico posto.»
   6.7   SUPPORTO       «Un supporto, a qualsiasi ora»
-  6.12  CONDIVISIONE   «I suoi dati condivisi in tempo reale.»
   entrano a 0,4" e restano fermi: Andrea taglia/posiziona. Stessa posizione e misura del banner REMINDERS.
 
 6.8-reminder-banner/          clip 12_PALM_6.8 – 7,0" (169 fotogrammi)
@@ -63,7 +62,7 @@ Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquad
   "_solo-logo-testi-alpha.mov" = solo logo e frasi su trasparente, se si vuole un altro sfondo.
 
 2.1-domanda-sofia/  3.1-domanda-sofia/  4.1-domanda-sofia/   domande di Sofia, parola per parola
-  Stile dei banner: riquadro verde Palm #2E473B, Plus Jakarta Sans regolare bianco, in basso al centro (clip non ancora ricevute).
+  Testo bianco su trasparente, al centro dell'inquadratura, Plus Jakarta Sans (con un'ombra morbida appena accennata per la leggibilità).
   Il fotogramma 0 coincide con l'inizio del file voce: posare l'alpha esattamente dove parte la voce.
   Ogni parola compare 1 fotogramma prima di essere pronunciata (tempi dall'allineamento voce/testo del brief); dopo l'ultima
   parola la frase resta ferma 2" per la lettura. "-anteprima-con-voce.mp4" contiene l'audio per verificare il sincrono.
@@ -76,11 +75,10 @@ Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquad
   Schermo ricostruito in HD dalla bozza (agenda, icone, barra) e inserito nel monitor verde, agganciato agli angoli.
   0,0"–1,4"  notifica Palm grande e leggibile «PALM · Report di Sofia condiviso con la pediatra»
   1,42"      click (la notifica si preme)   1,58"–2,0"  si apre «Report di Sofia» e resta
-  1,8"       banner CONDIVISIONE «I suoi dati condivisi in tempo reale.» in basso a sinistra (nessun volto coperto)
-  File: "-schermo-sostituito.mov" = clip completa con lo schermo già inserito (ProRes 422 HQ);
-        "-solo-schermo-alpha.mov" = solo lo schermo su trasparente; "-banner-alpha.mov" = banner a 1,8".
-  (La cartella 6.12-banner contiene lo stesso banner generico che entra a 0,4": per la scena usare 6.12-monitor.)
-
+  2,2"–4,0"  zoom finale sui genitori con la bambina (fino a 1,6x)
+  Niente banner su questa scena.
+  File: "-schermo-sostituito.mov" = clip completa con schermo e zoom (ProRes 422 HQ);
+        "-solo-schermo-alpha.mov" = solo lo schermo su trasparente, con lo stesso zoom.
 
 ANCORA DA FARE (mancano materiali)
   6.9 documento a tutto schermo + banner FONTI SCIENTIFICHE -> registrazione reale dello scorrimento (cliente), mock 08A/08B

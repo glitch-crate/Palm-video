@@ -1,10 +1,10 @@
 <!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="lib/base.css"><script src="lib/anim.js"></script>
 <style>
-  /* Domande di Sofia: stesso stile dei banner (verde Palm #2E473B, Plus Jakarta Sans regolare, testo bianco) */
-  #box { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); background: var(--palm); border-radius: 14px;
-         padding: 26px 46px 30px; box-shadow: 0 18px 40px rgba(0,0,0,.28); max-width: 1240px; width: max-content; text-align: center; }
-  #tx { font-weight: 400; font-size: 46px; line-height: 1.26; color: #fff; }
+  /* Domande di Sofia: testo bianco su trasparente, al centro dell'inquadratura (Plus Jakarta Sans, come le altre grafiche).
+     Ombra morbida appena accennata solo per la leggibilità sugli sfondi chiari. */
+  #box { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 1500px; width: max-content; text-align: center; }
+  #tx { font-weight: 500; font-size: 62px; line-height: 1.28; color: #fff; text-shadow: 0 2px 22px rgba(0,0,0,.35), 0 1px 3px rgba(0,0,0,.25); }
   .w { display: inline-block; opacity: 0; }
 </style></head><body>
 <div id="box"><div id="tx"></div></div>
@@ -25,7 +25,7 @@ words.forEach(([w, t]) => {
 const LEAD = 0.04;   // la parola compare un fotogramma prima del suono
 window.seek = t => {
   A.enter(box, t, els[0][1] - LEAD - .08, { dur: .3, dy: 0, scale: .985 });
-  box.style.transform = 'translateX(-50%) ' + box.style.transform;
+  box.style.transform = 'translate(-50%, -50%) ' + box.style.transform;
   els.forEach(([s, w]) => A.enter(s, t, w - LEAD, { dur: .16, dy: 8, scale: 1 }));
 };
 </script></body></html>
