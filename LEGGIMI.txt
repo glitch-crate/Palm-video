@@ -1,0 +1,14 @@
+SCENE NUOVE (draft, 6 novembre) – qui la grafica è da animare sulla scena vera
+
+Draft upscalati a 1920x1080 24 fps. Movimento e tempi restano IDENTICI nel finale a 1080p.
+Consegna come per le altre: solo grafica su trasparente (ProRes 4444) + anteprima MP4 sopra la clip.
+Durate definitive salvo tagli: se taglio, ti mando i nuovi punti d'ingresso.
+
+| # | File | Durata | Cosa succede | Grafica |
+|---|------|--------|--------------|---------|
+| 08 | 08_PALM_2.2_notte_forum_notifiche.mp4 | 12,0" | Il papà esce di quadro entro ~5"; la mamma legge il telefono, si ferma, si preoccupa sempre di più. Metà destra libera | «FORUM MAMME · Coliche» + 5 commenti uno alla volta (icone FB/TikTok solo sui commenti) + 3 notifiche WhatsApp in alto che interrompono (Mamme del quartiere / Mamme di marzo / Gruppo asilo nido). Non coprire il volto |
+| 09 | 09_PALM_3.2_cucina_legge_e_guarda_frigo.mp4 | 6,0" | Legge il foglio; verso 3,4" alza lo sguardo a destra verso il frigo e capisce | Nessuna grafica sopra. Il dettaglio leggibile del foglio lo faccio io con il tuo documento vaccino (file piatto 08 del LEGGIMI precedente) |
+| 10 | 10_PALM_3.3_dettaglio_calendario.mp4 | 4,0" | Avvicinamento lento sul calendario di carta (vuoto) sul frigo | Mi basta il tuo calendario «Novembre 2026» con il 6 evidenziato come file piatto: lo poso io sul foglio vuoto. Se preferisci animarlo tu (es. il 6 che si cerchia), fallo su questa clip |
+| 11 | 11_PALM_3.4_cucina_si_lascia_andare.mp4 | 5,0" | Posa il foglio e si lascia andare all'indietro, occhi chiusi, sospiro muto | Nessuna |
+| 12 | 12_PALM_6.8_colazione_notifica_banner.mp4 | 7,0" | Beve il caffè e sorride al papà; verso 3" vibra il telefono in tasca, lo prende e lo guarda (~5") | Notifica «PALM · Reminder: Vaccino esavalente per Sofia alle 14» verso 3"; banner «REMINDERS / Ogni appuntamento, sotto controllo» dopo che ha preso il telefono |
+| 13 | 13_PALM_6.9_colazione_chat_Palm.mp4 | 14,0" | Scrive 0–3"; invia verso 3"; legge 4–11"; tocca lo schermo verso 11" | Bolla domanda che si compone 0–3" (a sinistra, zona libera), invio; bolle risposta 4–11" (testo reale in arrivo); card azzurra fonte sotto la risposta; il tocco a 11" apre il documento a tutto schermo (tua grafica a sé, ~8–10", con banner FONTI SCIENTIFICHE poi scorrimento) |
