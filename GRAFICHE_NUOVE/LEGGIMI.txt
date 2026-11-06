@@ -62,7 +62,7 @@ Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquad
   Le due frasi hanno la stessa misura (80 px), una normale e una in grassetto, giustificate alla stessa larghezza.
   "_solo-logo-testi-alpha.mov" = solo logo e frasi su trasparente, se si vuole un altro sfondo.
 
-2.1-domanda-sofia/  3.1-domanda-sofia/  4.1-domanda-sofia/   domande di Sofia, parola per parola
+2.1-domanda-sofia/  3.1-domanda-sofia/  4.1-domanda-sofia/  5.1-domanda-sofia/   domande di Sofia, parola per parola
   Testo bianco su trasparente, al centro dell'inquadratura, in Fraunces (con un'ombra morbida appena accennata per la leggibilità).
   Il fotogramma 0 coincide con l'inizio del file voce: posare l'alpha esattamente dove parte la voce.
   Ogni parola compare 1 fotogramma prima di essere pronunciata (tempi dall'allineamento voce/testo del brief); dopo l'ultima
@@ -71,6 +71,8 @@ Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquad
   3.1  4,5"  «Ma dovevi pensare a tante cose?»            Ma 0,03 · dovevi 0,15 · pensare 0,63 · a 1,23 · tante 1,32 · cose 1,74
   4.1  6,5"  «E quando andavamo dalla dottoressa, ti ricordavi tutto tutto?»
              E 0,00 · quando 0,21 · andavamo 0,57 · dalla 1,11 · dottoressa 1,44 · ti 2,19 · ricordavi 2,34 · tutto 3,12 · tutto 3,57
+  5.1  6,8"  «Mami, e se fosse tutto un po' più semplice?»   (file voce VOCE_S5.1)
+             Mami 0,09 · e 1,75 · se 1,92 · fosse 2,13 · tutto 2,39 · un 2,78 · po' 3,06 · più 3,26 · semplice 3,50
 
 6.12-monitor/                 clip 6.12 HR (green screen) – 4,0" (97 fotogrammi)
   Schermo ricostruito in HD dalla bozza (agenda, icone, barra) e inserito nel monitor verde, agganciato agli angoli.

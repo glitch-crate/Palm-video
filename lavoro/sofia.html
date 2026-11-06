@@ -14,6 +14,8 @@ const LINES = {
   'S2.1': [["E",0.00],["quando",0.21],["eravamo",0.54],["a",0.90],["casa,",0.99],["com'era?",1.38]],
   'S3.1': [["Ma",0.03],["dovevi",0.15],["pensare",0.63],["a",1.23],["tante",1.32],["cose?",1.74]],
   'S4.1': [["E",0.00],["quando",0.21],["andavamo",0.57],["dalla",1.11],["dottoressa,",1.44],["|"],["ti",2.19],["ricordavi",2.34],["tutto",3.12],["tutto?",3.57]],
+  // 5.1: «Mami» e il resto separati da circa 1" di pausa; tempi dai picchi sillabici della voce (il riconoscimento non separa le parole centrali)
+  'S5.1': [["Mami,",0.09],["e",1.75],["se",1.92],["fosse",2.13],["tutto",2.39],["un",2.78],["po'",3.06],["più",3.26],["semplice?",3.50]],
 };
 const words = LINES[new URLSearchParams(location.search).get('id')];
 const els = [];
