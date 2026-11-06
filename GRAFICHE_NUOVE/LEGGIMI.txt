@@ -59,10 +59,11 @@ Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquad
 7.4-card-finale/              7,0" (168 fotogrammi) – a tutto schermo
   0,3" logo · 1,2" «Meno cose da tenere a mente.» (normale) · 3,6" «Più tempo per crescere insieme.» (grassetto)
   pausa tra le frasi 2,4"; poi 3,4" per leggerle entrambe. Più spazio tra logo e testo. Font Fraunces.
+  Le due frasi hanno la stessa misura (80 px), una normale e una in grassetto, giustificate alla stessa larghezza.
   "_solo-logo-testi-alpha.mov" = solo logo e frasi su trasparente, se si vuole un altro sfondo.
 
 2.1-domanda-sofia/  3.1-domanda-sofia/  4.1-domanda-sofia/   domande di Sofia, parola per parola
-  Testo bianco su trasparente, al centro dell'inquadratura, Plus Jakarta Sans (con un'ombra morbida appena accennata per la leggibilità).
+  Testo bianco su trasparente, al centro dell'inquadratura, in Fraunces (con un'ombra morbida appena accennata per la leggibilità).
   Il fotogramma 0 coincide con l'inizio del file voce: posare l'alpha esattamente dove parte la voce.
   Ogni parola compare 1 fotogramma prima di essere pronunciata (tempi dall'allineamento voce/testo del brief); dopo l'ultima
   parola la frase resta ferma 2" per la lettura. "-anteprima-con-voce.mp4" contiene l'audio per verificare il sincrono.

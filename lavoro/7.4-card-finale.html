@@ -7,18 +7,30 @@
   #logo { left: 50%; top: 250px; width: 520px; margin-left: -260px; }
   #logo img { width: 100%; display: block; }
   .l { left: 0; width: 1920px; text-align: center; font-family: "Fraunces", serif; color: #1F4D3A; }
-  #l1 { top: 580px; font-size: 70px; font-weight: 400; }
-  #l2 { top: 680px; font-size: 84px; font-weight: 700; }
+  /* stessa misura (80px) per le due righe: una normale, una grassetto, giustificate alla stessa larghezza */
+  #l1 { top: 575px; font-size: 80px; font-weight: 400; }
+  #l2 { top: 680px; font-size: 80px; font-weight: 700; letter-spacing: -0.015em; }
+  .l span { white-space: nowrap; }
 </style></head><body>
 <div id="bg" class="abs">
   <div class="blob" style="left:-120px;top:-60px;width:820px;height:520px;background:rgba(170,205,180,.38)"></div>
   <div class="blob" style="left:1250px;top:640px;width:900px;height:560px;background:rgba(170,205,180,.32)"></div>
 </div>
 <div id="logo" class="abs"><img src="brand/palm-header-mark.png"></div>
-<div id="l1" class="abs l">Meno cose da tenere a mente.</div>
-<div id="l2" class="abs l">Più tempo per crescere insieme.</div>
+<div id="l1" class="abs l"><span id="s1">Meno cose da tenere a mente.</span></div>
+<div id="l2" class="abs l"><span id="s2">Più tempo per crescere insieme.</span></div>
 <script>
+window.READY = false;
 if (location.search.includes('alpha')) bg.style.display = 'none';
+// giustificazione: la riga normale prende la stessa larghezza della riga in grassetto (spaziatura calcolata)
+document.fonts.ready.then(() => {
+  const target = s2.getBoundingClientRect().width, n = s1.textContent.length - 1;
+  s1.style.letterSpacing = '0px';
+  const w0 = s1.getBoundingClientRect().width;
+  s1.style.letterSpacing = ((target - w0) / n).toFixed(3) + 'px';
+  s1.style.marginRight = '-' + s1.style.letterSpacing;   // l'ultima lettera non aggiunge spazio a destra
+  window.READY = true;
+});
 // Tempi (brief 7.4): logo, prima frase, pausa ben più lunga di 1" (2,4"), seconda frase, poi tempo per leggerle entrambe.
 const T = { logo: .3, l1: 1.2, l2: 3.6 };
 window.seek = t => {

@@ -12,7 +12,7 @@ const fs = require('fs');
   const page = await browser.newPage({ viewport: { width: Number(process.env.VW || 1920), height: Number(process.env.VH || 1080) }, deviceScaleFactor: 1 });
   await page.goto('file://' + path.resolve(page_));
   await page.evaluate(() => document.fonts.ready);
-  await page.waitForFunction(() => typeof window.seek === 'function');
+  await page.waitForFunction(() => typeof window.seek === 'function' && (window.READY !== false));
   for (let i = 0; i < Number(n); i++) {
     const t = i / fps;
     await page.evaluate(t => window.seek(t), t);
