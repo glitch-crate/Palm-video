@@ -27,10 +27,12 @@ Le grafiche sono costruite sulle clip in repo (08–13). Se Andrea cambia inquad
   A4 a 300 dpi (2480x3510). Riga in evidenza: «5 novembre 2026 – Vaccino esavalente – Ambulatorio 2».
   Carattere da ufficio tipo Arial (è un documento ASL, non una grafica Palm).
 
-3.3-calendario/               clip 10_PALM_3.3 – 4,0" (97 fotogrammi)
-  «NOVEMBRE 2026» stampato sul foglio vuoto del frigo, agganciato al movimento di macchina (tracking).
-  Settimana da lunedì; l'1 è domenica; 30 nella casella del 23 (la griglia stampata ha 5 righe).
-  0,8"–1,8"  il 6 (venerdì) si cerchia a penna rossa; poi resta.
+3.3-calendario/               clip 10_PALM_3.3 – 4,0" (97 fotogrammi)  – v2
+  «NOVEMBRE 2026» stampato sul foglio vuoto del frigo, agganciato al movimento di macchina.
+  v2: tracciamento rifatto (ogni fotogramma allineato al primo + traiettoria levigata) -> niente flicker finale;
+  numeri centrati nei quadrati; l'1 è nel primo quadrato. Poiché l'1 novembre 2026 è domenica, la settimana
+  parte da DOM (DOM LUN MAR MER GIO VEN SAB): 1–30 stanno nelle 5 righe stampate e il 6 resta venerdì.
+  0,8"–1,8"  il 6 si cerchia a penna rossa; poi resta.
   File piatti: calendario trasparente con e senza cerchio, e versione su carta.
 
 6.2-banner/  6.7-banner/  6.12-banner/   banner nel nuovo stile – 5,0" (120 fotogrammi), clip non ancora ricevute
