@@ -1,0 +1,141 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="lib/base.css"><script src="lib/anim.js"></script>
+<style>
+  /* Schermo del monitor 6.12, ricostruito in HD dalla bozza (1600x900, 16:9). Tempi come nella bozza. */
+  html, body { width: 1600px; height: 900px; background: transparent; }
+  #desk { position: absolute; inset: 0; background: radial-gradient(120% 120% at 70% 30%, #b3c2b8 0%, #93a99c 55%, #7f978a 100%); }
+  .win { position: absolute; background: #FAF9F6; border-radius: 10px; box-shadow: 0 14px 40px rgba(20,40,30,.28); overflow: hidden; }
+  .bar { height: 34px; background: #EFEEEA; display: flex; align-items: center; padding: 0 14px; font-size: 15px; color: #6b716d; justify-content: space-between; }
+  .dots { display: flex; gap: 18px; color: #9aa09c; font-size: 14px; }
+  /* Agenda */
+  #ag { left: 70px; top: 80px; width: 860px; height: 620px; }
+  #ag .side { position: absolute; left: 0; top: 34px; bottom: 0; width: 170px; padding: 22px 18px; font-size: 16px; color: #4a524d; line-height: 2.0; }
+  #ag .side b { font-weight: 700; color: #26302b; }
+  #ag .main { position: absolute; left: 180px; right: 24px; top: 54px; }
+  #ag .hd { font-size: 16px; color: #6a726d; margin-bottom: 14px; }
+  .row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .row .t { width: 52px; font-size: 15px; color: #7b827e; text-align: right; }
+  .row .ev { flex: 1; height: 54px; border-radius: 6px; display: flex; align-items: center; padding: 0 18px; font-size: 18px; color: #2f3833; font-weight: 500; }
+  /* icone desktop */
+  .ic { position: absolute; right: 52px; width: 70px; text-align: center; font-size: 13px; color: #f3f5f3; }
+  .fold { width: 58px; height: 44px; margin: 0 auto 6px; background: #E9B949; border-radius: 4px 10px 6px 6px; box-shadow: 0 2px 4px rgba(0,0,0,.15); }
+  .doc { width: 46px; height: 58px; margin: 0 auto 6px; background: #fbfbfa; border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,.15); }
+  /* barra applicazioni */
+  #task { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: rgba(240,242,240,.92); display: flex; align-items: center; padding: 0 22px; gap: 12px; }
+  #task .a { width: 26px; height: 26px; border-radius: 6px; }
+  #task .clk { margin-left: auto; font-size: 16px; color: #4c534f; }
+  /* Notifica Palm (più grande e leggibile) */
+  #nt { right: 30px; top: 30px; width: 1010px; height: 150px; background: #fff; border-radius: 18px; box-shadow: 0 18px 44px rgba(10,30,20,.35);
+        display: flex; align-items: center; gap: 26px; padding: 0 40px 0 30px; transform-origin: 100% 0; }
+  #nt .i { width: 88px; height: 88px; border-radius: 50%; background: var(--palm); display: flex; align-items: center; justify-content: center; flex: none; }
+  #nt .i img { width: 52px; }
+  #nt .app { font-weight: 700; font-size: 24px; letter-spacing: .16em; color: #66706a; display: flex; justify-content: space-between; }
+  #nt .app span:last-child { letter-spacing: 0; font-weight: 400; color: #8a918d; }
+  #nt .msg { font-weight: 600; font-size: 37px; color: #18211c; margin-top: 4px; white-space: nowrap; }
+  #press { position: absolute; inset: 0; background: rgba(46,71,59,.12); border-radius: 18px; opacity: 0; }
+  /* Report di Sofia */
+  #rp { left: 150px; top: 60px; width: 1310px; height: 770px; transform-origin: 85% 10%; }
+  #rp .in { position: absolute; left: 44px; right: 44px; top: 56px; bottom: 30px; }
+  #rp .logo { height: 34px; }
+  #rp h1 { font-family: "Fraunces", serif; font-weight: 700; font-size: 50px; color: #1f2b25; margin-top: 10px; }
+  #rp .sub { font-size: 17px; color: #6c746f; margin-top: 2px; }
+  #rp .badge { position: absolute; right: 0; top: 34px; background: #E3EDE6; color: #2E473B; border-radius: 10px; padding: 12px 18px; font-size: 16px; font-weight: 600; line-height: 1.35; }
+  #rp .badge b { display: block; font-size: 22px; }
+  .cols { display: flex; gap: 46px; margin-top: 22px; }
+  .col { flex: 1; }
+  .sec { border-top: 1.5px solid #d9dcd8; padding-top: 8px; margin-bottom: 12px; }
+  .sec h3 { font-size: 16px; font-weight: 700; color: #26302b; margin-bottom: 4px; }
+  .kv { display: flex; font-size: 15px; color: #4b544f; line-height: 1.55; }
+  .kv span:first-child { width: 210px; color: #7a827d; }
+  .red { color: #C2412F !important; font-weight: 600; }
+  .bot { display: flex; gap: 46px; margin-top: 6px; }
+  .chart { flex: 1.35; }
+  .chart h3, .tab h3 { font-size: 16px; font-weight: 700; color: #26302b; margin-bottom: 6px; }
+  .tab { flex: 1; font-size: 15px; color: #4b544f; }
+  .tab .r { display: flex; justify-content: space-between; border-bottom: 1px solid #e3e5e2; padding: 5px 0; }
+</style></head><body>
+<div id="desk"></div>
+<div class="ic" style="top:200px"><div class="fold"></div>Pazienti</div>
+<div class="ic" style="top:300px"><div class="fold"></div>Referti</div>
+<div class="ic" style="top:400px"><div class="doc"></div>Note.txt</div>
+
+<div id="ag" class="win">
+  <div class="bar"><span>Agenda ambulatorio</span><span class="dots"><span>—</span><span>☐</span><span>✕</span></span></div>
+  <div class="side"><b>Settimana</b><br>Oggi<br>Pazienti<br>Referti<br>Messaggi</div>
+  <div class="main">
+    <div class="hd">Appuntamenti di oggi</div>
+    <div class="row"><span class="t">09:00</span><div class="ev" style="background:#D3E2D7">Bilancio di salute</div></div>
+    <div class="row"><span class="t">09:30</span><div class="ev" style="background:#F2DCCF">Visita di controllo</div></div>
+    <div class="row"><span class="t">10:00</span><div class="ev" style="background:#D3E2D7">Sofia – visita</div></div>
+    <div class="row"><span class="t">10:30</span><div class="ev" style="background:#F2DCCF">Vaccinazione</div></div>
+    <div class="row"><span class="t">11:00</span><div class="ev" style="background:#D3E2D7">Visita di controllo</div></div>
+    <div class="row"><span class="t">11:30</span><div class="ev" style="background:#DCDDF0">Telefonata genitori</div></div>
+  </div>
+</div>
+
+<div id="rp" class="win">
+  <div class="bar"><span>Palm – Report condiviso</span><span class="dots"><span>—</span><span>☐</span><span>✕</span></span></div>
+  <div class="in">
+    <img class="logo" src="brand/logo-verde.png">
+    <h1>Report di Sofia</h1>
+    <div class="sub">Dati condivisi dai genitori tramite Palm</div>
+    <div class="badge">Condiviso in tempo reale<b>Aggiornato ora</b></div>
+    <div class="cols">
+      <div class="col">
+        <div class="sec"><h3>Dati anagrafici</h3>
+          <div class="kv"><span>Nome</span><span>Sofia</span></div>
+          <div class="kv"><span>Data di nascita</span><span>14/03/2026</span></div>
+          <div class="kv"><span>Peso alla nascita</span><span>3,2 kg</span></div>
+          <div class="kv"><span>Gruppo sanguigno</span><span>0 positivo</span></div></div>
+        <div class="sec"><h3>Allergie note</h3><div class="kv"><span>Nessuna allergia nota</span></div></div>
+        <div class="sec"><h3>Terapie in corso</h3><div class="kv"><span>Nessuna</span></div></div>
+      </div>
+      <div class="col">
+        <div class="sec"><h3>Vaccinazioni</h3>
+          <div class="kv"><span>Esavalente</span><span>eseguito</span></div>
+          <div class="kv"><span class="red">Antipneumococcico</span><span class="red">15/12/2026</span></div>
+          <div class="kv"><span class="red">Antimeningococcico</span><span class="red">09/03/2027</span></div></div>
+        <div class="sec"><h3>Prossimi appuntamenti</h3>
+          <div class="kv"><span>Visita di controllo</span><span>12/01/2027</span></div></div>
+        <div class="sec"><h3>Note dei genitori</h3><div class="kv"><span>Coliche serali, in miglioramento</span></div></div>
+      </div>
+    </div>
+    <div class="bot">
+      <div class="chart"><h3>Curva di crescita (peso)</h3>
+        <svg width="660" height="150" viewBox="0 0 660 150">
+          <rect x="0" y="0" width="660" height="150" fill="#F1F3F0" rx="6"/>
+          <path d="M30 120 C 180 95, 330 70, 630 40 L 630 70 C 330 100, 180 120, 30 140 Z" fill="#DDE7E0"/>
+          <path d="M30 128 C 150 112, 260 96, 380 84 S 560 62, 630 55" fill="none" stroke="#2E473B" stroke-width="3"/>
+          <g fill="#2E473B"><circle cx="30" cy="128" r="4"/><circle cx="200" cy="106" r="4"/><circle cx="380" cy="84" r="4"/><circle cx="630" cy="55" r="4"/></g>
+        </svg></div>
+      <div class="tab"><h3>Ultime misurazioni</h3>
+        <div class="r"><span>14/09/2026</span><span>6,4 kg</span><span>64 cm</span></div>
+        <div class="r"><span>14/07/2026</span><span>5,6 kg</span><span>60 cm</span></div>
+        <div class="r"><span>14/05/2026</span><span>4,6 kg</span><span>56 cm</span></div>
+        <div class="r"><span>14/03/2026</span><span>3,2 kg</span><span>50 cm</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="nt" class="abs">
+  <div class="i"><img src="brand/mano-bianca.png"></div>
+  <div style="flex:1;min-width:0"><div class="app"><span>PALM</span><span>ora</span></div>
+  <div class="msg">Report di Sofia condiviso con la pediatra</div></div>
+  <div id="press"></div>
+</div>
+
+<div id="task"><div class="a" style="background:#3B82F6"></div><div class="a" style="background:#E9B949"></div><div class="a" style="background:#2FA36B"></div><span class="clk">10:02</span></div>
+<script>
+// Tempi dalla bozza: notifica visibile da subito; click ~1,5"; il report si apre 1,58"–2,0" e resta.
+const T = { press: 1.42, open: 1.58, openDur: .42 };
+window.seek = t => {
+  const k = A.p(t, T.press, .22), pr = Math.sin(k * Math.PI);
+  press.style.opacity = (pr * .9).toFixed(3);
+  const o = A.inOutCubic(A.p(t, T.open, .3));
+  nt.style.opacity = (1 - o).toFixed(3);
+  nt.style.transform = `scale(${(1 - .02 * pr - .04 * o).toFixed(4)})`;
+  const r = A.outCubic(A.p(t, T.open, T.openDur));
+  rp.style.opacity = r.toFixed(3);
+  rp.style.transform = `scale(${A.lerp(.9, 1, r).toFixed(4)})`;
+};
+</script></body></html>

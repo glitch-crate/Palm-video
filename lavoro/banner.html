@@ -9,5 +9,6 @@ const q = new URLSearchParams(location.search);
 kw.textContent = q.get('k'); tx.innerHTML = q.get('t').split('|').join('<br>');
 // ancoraggio in basso come il banner REMINDERS
 const h = banner.offsetHeight; banner.style.top = (668 + 199 - h) + 'px';
-window.seek = t => A.enter(banner, t, .4, { dur: .5, dy: 22, scale: .97 });
+const T_IN = Number(q.get('in') || .4);
+window.seek = t => A.enter(banner, t, T_IN, { dur: .5, dy: 22, scale: .97 });
 </script></body></html>

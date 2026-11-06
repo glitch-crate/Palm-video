@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="lib/base.css"><script src="lib/anim.js"></script>
+<style>
+  /* Domande di Sofia: stesso stile dei banner (verde Palm #2E473B, Plus Jakarta Sans regolare, testo bianco) */
+  #box { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); background: var(--palm); border-radius: 14px;
+         padding: 26px 46px 30px; box-shadow: 0 18px 40px rgba(0,0,0,.28); max-width: 1240px; width: max-content; text-align: center; }
+  #tx { font-weight: 400; font-size: 46px; line-height: 1.26; color: #fff; }
+  .w { display: inline-block; opacity: 0; }
+</style></head><body>
+<div id="box"><div id="tx"></div></div>
+<script>
+// Parole e istante (s) in cui Sofia le pronuncia, ricavati dall'allineamento della voce con il testo del brief
+const LINES = {
+  'S2.1': [["E",0.00],["quando",0.21],["eravamo",0.54],["a",0.90],["casa,",0.99],["com'era?",1.38]],
+  'S3.1': [["Ma",0.03],["dovevi",0.15],["pensare",0.63],["a",1.23],["tante",1.32],["cose?",1.74]],
+  'S4.1': [["E",0.00],["quando",0.21],["andavamo",0.57],["dalla",1.11],["dottoressa,",1.44],["|"],["ti",2.19],["ricordavi",2.34],["tutto",3.12],["tutto?",3.57]],
+};
+const words = LINES[new URLSearchParams(location.search).get('id')];
+const els = [];
+words.forEach(([w, t]) => {
+  if (w === '|') { tx.insertAdjacentHTML('beforeend', '<br>'); return; }
+  const s = document.createElement('span'); s.className = 'w'; s.textContent = w; tx.appendChild(s); tx.append(' ');
+  els.push([s, t]);
+});
+const LEAD = 0.04;   // la parola compare un fotogramma prima del suono
+window.seek = t => {
+  A.enter(box, t, els[0][1] - LEAD - .08, { dur: .3, dy: 0, scale: .985 });
+  box.style.transform = 'translateX(-50%) ' + box.style.transform;
+  els.forEach(([s, w]) => A.enter(s, t, w - LEAD, { dur: .16, dy: 8, scale: 1 }));
+};
+</script></body></html>
